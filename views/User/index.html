@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="utf-8">
+	<title><{$title}></title>
+</head>
+<body>
+	<h1>用户列表</h1>
+	<table border="1" width="800" cellspacing="0">
+		<tr>
+			<td>Id</td>
+			<td>姓名</td>
+			<td>性別</td>
+			<td>年齡</td>
+			<td>操作</td>
+		</tr>
+			<{foreach $list as $v}>
+				<tr>
+					<td><{$v.id}></td>
+					<td><{$v.name}></td>
+					<td><{$v.sex}></td>
+					<td><{$v.age}></td>
+					<td>
+						<a href="./index.php?m=User&a=delete&id=<{$v.id}>">刪除</a>
+						<a href="./index.php?m=User&a=edit&id=<{$v.id}>">編輯</a>
+					</td>
+				</tr>
+			<{/foreach}>
+	</table>
+	<a href="./index.php?m=User&a=add">添加用户</a>
+</body>
+</html>
